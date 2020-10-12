@@ -63,9 +63,9 @@ func GetFirstGreaterOrEqualIndex(nums []Comparable, targetNum Comparable) int {
 	for left <= right {
 		mid := left + (right-left)/2
 		if targetNum.Greater(nums[mid]) {
-			right = mid - 1
-		} else {
 			left = mid + 1
+		} else {
+			right = mid - 1
 		}
 	}
 	return left
