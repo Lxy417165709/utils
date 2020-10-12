@@ -9,16 +9,16 @@ func IsExist(nums []int, targetNum int) bool {
 	return false
 }
 
-func IsExistSortedNums(nums []int,targetNum int) bool{
-	left,right := 0,len(nums)-1
-	for left<=right{
-		mid := left+(right-left)/2
-		if nums[mid]==targetNum{
+func IsExistInSortedNums(nums []int, targetNum int) bool {
+	left, right := 0, len(nums)-1
+	for left <= right {
+		mid := left + (right-left)/2
+		if nums[mid] == targetNum {
 			return true
 		}
-		if nums[mid]>targetNum{
+		if nums[mid] > targetNum {
 			right = mid - 1
-		}else{
+		} else {
 			left = mid + 1
 		}
 	}
