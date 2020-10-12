@@ -1,14 +1,8 @@
 package array
 
-type Int int
 
 type Comparable interface {
 	Greater(c Comparable) bool
-}
-
-func (i Int) Greater(c Comparable) bool {
-	j := c.(Int)
-	return i > j
 }
 
 
