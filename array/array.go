@@ -5,7 +5,6 @@ type Comparable interface {
 	Greater(c Comparable) bool
 }
 
-
 func IntsToInterfaces(ints []int) []interface{} {
 	interaces := make([]interface{},0)
 	for _,i := range ints{
