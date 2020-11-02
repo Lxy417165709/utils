@@ -64,13 +64,33 @@ func GetFirstGreaterOrEqualIndex(nums []Comparable, targetNum Comparable) int {
 	return left
 }
 
+func GetKthSmall(nums []Comparable,k int) Comparable{
+	if len(nums) == 0 {
+		return nil
+	}
+	rightPositionIndex := Partition(nums)
+	smallOrder := rightPositionIndex+1
+	if smallOrder == k{
+		return nums[k-1]
+	}
+	if smallOrder > k{
+		return GetKthSmall(nums[:rightPositionIndex],k)
+	}else{
+		return GetKthSmall(nums[rightPositionIndex+1:],k-smallOrder)
+	}
+}
+
 // ---------------- 排序相关 ----------------
 func QuickSort(nums []Comparable) {
-	// 要加这个限制，否则 right 可能等于 -1
 	if len(nums) == 0 {
 		return
 	}
+	rightPositionIndex := Partition(nums)
+	QuickSort(nums[:rightPositionIndex])
+	QuickSort(nums[rightPositionIndex+1:])
+}
 
+func Partition(nums []Comparable) int {
 	refNumIndex := 0
 	left, right := 0, len(nums)-1
 	for left <= right {
@@ -85,8 +105,7 @@ func QuickSort(nums []Comparable) {
 		}
 	}
 	nums[right], nums[refNumIndex] = nums[refNumIndex], nums[right]
-	QuickSort(nums[:right])
-	QuickSort(nums[right+1:])
+	return right
 }
 
 func isEqual(firstNum Comparable, secondNum Comparable) bool {

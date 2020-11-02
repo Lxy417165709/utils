@@ -44,3 +44,21 @@ func TestQuickSort(t *testing.T) {
 	QuickSort(nums)
 	fmt.Println("After sorting", nums)
 }
+
+func TestGetKthSmall(t *testing.T) {
+	nums := []Comparable{
+		Int(1), Int(8), Int(2),
+		Int(4), Int(8), Int(7),
+		Int(6), Int(7), Int(89),
+		Int(1), Int(98), Int(3),
+		Int(18), Int(9), Int(3),
+		Int(18), Int(-5), Int(123),
+	}
+	fmt.Printf("%dth small: %v\n", 1, GetKthSmall(nums, 1))
+	fmt.Printf("%dth small: %v\n", 5, GetKthSmall(nums, 5))
+	fmt.Printf("%dth small: %v\n", 6, GetKthSmall(nums, 6))
+	fmt.Printf("%dth small: %v\n", 10, GetKthSmall(nums, 10))
+	fmt.Printf("%dth small: %v\n", 15, GetKthSmall(nums, 15))
+	fmt.Printf("%dth small: %v\n", 16, GetKthSmall(nums, 16))
+	fmt.Printf("%dth small: %v\n", 20, GetKthSmall(nums, 20))
+}
