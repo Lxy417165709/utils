@@ -62,3 +62,22 @@ func TestGetKthSmall(t *testing.T) {
 	fmt.Printf("%dth small: %v\n", 16, GetKthSmall(nums, 16))
 	fmt.Printf("%dth small: %v\n", 20, GetKthSmall(nums, 20))
 }
+
+func TestPermutation(t *testing.T) {
+	nums := []interface{}{
+		1, 1, 1, 2,
+	}
+	var resultSet [][]interface{}
+	Permutation(&resultSet, nums, nil)
+	fmt.Println(len(resultSet))
+	fmt.Println(resultSet)
+}
+
+func TestSpiralOrder(t *testing.T) {
+	matrix := [][]interface{}{
+		{1, 2, 3, 100},
+		{8, 9, 4, 1000},
+		{7, 6, 5, 10000},
+	}
+	fmt.Println(SpiralOrder(matrix))
+}
