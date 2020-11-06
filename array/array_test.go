@@ -41,8 +41,10 @@ func TestQuickSort(t *testing.T) {
 		Int(18), Int(-5), Int(123),
 	}
 	fmt.Println("Before sorting", nums)
+	fmt.Println("IsSorted",isSorted(nums))
 	QuickSort(nums)
 	fmt.Println("After sorting", nums)
+	fmt.Println("IsSorted",isSorted(nums))
 }
 
 func TestGetKthSmall(t *testing.T) {

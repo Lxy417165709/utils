@@ -192,3 +192,12 @@ func deepCopy(oldSlice []interface{}) []interface{} {
 	copy(newSlice, oldSlice)
 	return newSlice
 }
+
+func isSorted(nums []Comparable) bool {
+	for i := 1; i < len(nums); i++ {
+		if nums[i-1].Greater(nums[i]) {
+			return false
+		}
+	}
+	return true
+}
